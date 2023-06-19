@@ -124,16 +124,3 @@ misp_redis_securecommands:
 # Update Galaxies, ObjectTemplates, Warninglists, Noticelists and Templates before first login
 misp_run_updates: false
 misp_run_updates_lock: "{{ misp_rootdir }}/.run_updates_lock"
-
-# Path to the environment file
-environment_file: /etc/environment
-# The environment file owner
-environment_file_owner: root
-# The environment file group
-environment_file_group: root
-# A dictionary of config parameters i.e
-#
-# environment_config:
-#   LC_ALL: en_US.UTF-8
-#   PATH: "/your/path:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games/"
-environment_config: { COMPOSER_HOME="/usr/local/bin }
