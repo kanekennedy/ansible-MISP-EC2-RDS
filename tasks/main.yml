@@ -171,6 +171,8 @@
     ## check if commit signed. only partially the case at Jan 2017. require git 2.1.0+ + import key
     # verify_commit: yes
     track_submodules: yes
+    recursive: no
+    depth: 1
   become: yes
   become_user: "{{ www_user }}"
   # when: not m.stat.exists
@@ -181,7 +183,7 @@
   args:
     chdir: "{{ misp_rootdir }}"
   with_items:
-    - git submodule update --init --recursive
+    - git submodule update --init --recursive --depth 50
     - git submodule foreach --recursive git config core.filemode false
   become: yes
   become_user: "{{ www_user }}"
