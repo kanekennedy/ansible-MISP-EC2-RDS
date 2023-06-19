@@ -38,7 +38,8 @@
   ansible.builtin.command: "{{ php_bin | default('php') }} -q /tmp/composer-installer.php --install-dir=/usr/local/bin --filename=composer"
   args:
     creates: /usr/local/bin/composer
-
+  environment: COMPOSER_HOME="/usr/local/bin"
+  
 - name: Install composers components
   block:
     - name: Allow-plugins composer/installers as required
