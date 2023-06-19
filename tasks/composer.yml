@@ -1,7 +1,5 @@
 ---
 # added to set composer env 
----
-
 - name: Ensure environment file exists
   file:
     path: "{{ environment_file }}"
