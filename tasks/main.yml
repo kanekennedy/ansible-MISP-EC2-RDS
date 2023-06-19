@@ -160,6 +160,7 @@
   ansible.builtin.stat:
     path: "{{ misp_rootdir }}/INSTALL"
   register: m
+  
 - name: Git clone MISP
   ansible.builtin.git:
     repo: https://github.com/MISP/MISP.git
@@ -169,7 +170,7 @@
     force: no
     ## check if commit signed. only partially the case at Jan 2017. require git 2.1.0+ + import key
     # verify_commit: yes
-    # track_submodules: yes
+    track_submodules: yes
   become: yes
   become_user: "{{ www_user }}"
   # when: not m.stat.exists
