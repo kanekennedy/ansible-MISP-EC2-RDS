@@ -95,4 +95,4 @@
       until: pkg_result is success
       become: yes
       become_user: "{{ www_user }}"
-  ignore_errors: true
+
