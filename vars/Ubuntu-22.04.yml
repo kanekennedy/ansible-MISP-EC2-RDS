@@ -2,7 +2,7 @@
 
 misp_pkg_list:
  - openssh-server
- #- mysql-server
+ - mysql-server
  # MISP only supports PHP 7 on oct 2022
  - php7.4
  - php7.4-dev
