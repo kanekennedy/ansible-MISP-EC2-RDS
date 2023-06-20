@@ -262,8 +262,9 @@
   ansible.builtin.import_tasks: stix-cybox.yml
 
 # DISABLE - Using Geerling guy role
-#- name: Import composer
-#  ansible.builtin.import_tasks: composer.yml
+- name: Import composer
+  ansible.builtin.import_tasks: composer.yml
+  ignore_errors: true
 
 ### https://github.com/geerlingguy/ansible-role-php-pecl/blob/master/tasks/main.yml
 ### FIXME! pecl/redis requires PHP (version >= 7.0.0, version <= 7.1.0, excluded versions: 6.0.0)
