@@ -39,6 +39,7 @@
     creates: /usr/local/bin/composer
  
   environment: COMPOSER_HOME="/usr/local/bin"
+  ignore_errors: true
   
 - name: Install composers components
   block:
@@ -94,3 +95,4 @@
       until: pkg_result is success
       become: yes
       become_user: "{{ www_user }}"
+  ignore_errors: true
