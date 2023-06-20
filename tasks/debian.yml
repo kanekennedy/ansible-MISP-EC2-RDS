@@ -4,13 +4,13 @@
   ansible.builtin.import_tasks: debian-php74.yml
   when: ansible_distribution_release == 'jammy'
 
-- name: Debian | MISP dependencies install
-  ansible.builtin.apt:
-    name: "{{ misp_pkg_list + webserver }}"
-    state: present
-    update_cache: false
-    cache_valid_time: 3600
-  async: 3600
-  poll: 300
-  register: pkg_result
-  until: pkg_result is success
+# - name: Debian | MISP dependencies install
+#   ansible.builtin.apt:
+#     name: "{{ misp_pkg_list + webserver }}"
+#     state: present
+#     update_cache: false
+#     cache_valid_time: 3600
+#   async: 3600
+#   poll: 300
+#   register: pkg_result
+#   until: pkg_result is success
